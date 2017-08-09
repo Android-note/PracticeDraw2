@@ -4,8 +4,11 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
+
+import com.hencoder.hencoderpracticedraw2.R;
 
 public class Practice13ShadowLayerView extends View {
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -24,6 +27,8 @@ public class Practice13ShadowLayerView extends View {
 
     {
         // 使用 Paint.setShadowLayer() 设置阴影
+        paint.setShadowLayer(20, 30, 30,
+                ContextCompat.getColor(getContext(), R.color.color3));
     }
 
     @Override
