@@ -5,8 +5,11 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
+
+import com.hencoder.hencoderpracticedraw2.R;
 
 public class Practice16TextPathView extends View {
     Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -31,7 +34,10 @@ public class Practice16TextPathView extends View {
 
         // 使用 Paint.getTextPath() 来获取文字的 Path
 
+        paint.getTextPath(text, 0, text.length(), 50, 600, textPath);
+
         pathPaint.setStyle(Paint.Style.STROKE);
+        pathPaint.setColor(ContextCompat.getColor(getContext(), R.color.color1));
     }
 
     @Override
